@@ -1,0 +1,122 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla TESIS
+% Escuela Técnica Superior de Ingenieros Industriales - Universidad Politécnica de Madrid
+% Adaptada por: SSM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Cito con hyperref pero podría hacerlo más rápido con: 
+% \ref{ch1}
+% \autoref{ch1}
+% \nameref{ch1}
+
+% Archivo .CLS que incluye todas las configuraciones del documento y los paquetes. Añade todo aquello que necesites utilizar en el documento en este archivo.
+% En él se encuentra la configuración de los márgenes, establecidos según las directrices de estilo.
+\documentclass[12pt,a4paper,openright,final,twoside,spanish]{cseethesis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INFORMACIÓN DE LA TESIS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título y subtítulo
+\newcommand{\titulo}{Análisis del comportamiento visual del conductor aplicado a la toma de decisiones en vehículos autónomos}
+\newcommand{\subtitulo}{Impact of available information on autonomous vehicle decision-making}
+% Datos del autor
+\newcommand{\miNombre}{Sofía Sánchez Mateo}
+\newcommand{\miEmail}{sofia.sanchez@upm.es}
+\newcommand{\miTitulacion}{Máster en Ingeniería Industrial}
+% Datos del tutor/es
+\newcommand{\miTutor}{Felipe Jiménez Alonso}
+\newcommand{\TitulacionTutor}{Doctor Ingeniero Industrial}
+\newcommand{\departamentoTutor}{Dpto. Ingeniería Mecánica - Escuela Técnica Superior de Ingenieros Industriales}
+% Datos de la escuela y universidad
+\newcommand{\miFacultad}{Escuela Técnica Superior de Ingenieros Industriales}
+\newcommand{\miFacultadCorto}{ETSII UPM}
+\newcommand{\miUniversidad}{\protect{Universidad Politécnica de Madrid}}
+\newcommand{\miUbicacion}{Madrid}
+
+\def\IDtitulo{1}							
+% Configuración automática según el identificador elegido
+\input{include/configuraciontitulacion} 
+
+\addbibresource{references.bib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% 
+% INICIO DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\include{anexos/acronimos}
+
+\def\dedication{Kira}
+
+% Read abstract and preface from separate files.
+% Make sure these exist. See example files.
+\def\thanks{\input{capitulos/preface.tex}}
+\def\theresumen{\input{capitulos/resumen}}
+\def\theabstract{\input{capitulos/abstract}}
+\def\myquote{\input{capitulos/quote}}
+
+% The definitions above could be put directly in the function call below,
+% but is here defined explicitly, for the purpose of clarity.
+
+\startpreamble
+  {\titulo}
+  {\miNombre}
+  {\miEmail}
+  {\miTutor}
+  {\dedication}
+  {\thanks}
+  {\myquote}
+  {\theresumen}
+  {\theabstract}
+
+\chapter*{{\hrule\medskip\hfill \sc Índice de términos \medskip\hrule}} %Glosario con su formato como chapter
+\printglossaries
+\cleardoublepage
+
+%%%%
+% CONTENIDO. CAPÍTULOS DEL TRABAJO
+\pagenumbering{arabic} %A partir de aqui con números normales
+%% Initialize part containing the thesis introduction chapters
+\startchapters
+% makechapter (el primero es lo que sale en el encabezado de las páginas)(el segundo lo que sale en el índice)(el tercero el que sale en el capítulo)
+
+\makechapter{Introducción}{Introducción}{Introducción\label{ch1}}
+\input{capitulos/chapter1.tex}
+
+\makechapter{Estado de la cuestión}{Estado de la cuestión}{Estado de la cuestión\label{ch2}}
+\input{capitulos/chapter2.tex}
+
+\makechapter{Variables atencionales en la conducción}{Variables atencionales en la conducción}{Variables atencionales en la conducción}\label{ch3}
+\input{capitulos/chapter3.tex}
+
+\makechapter{Fusión sensorial}{Fusión sensorial}{Fusión sensorial}\label{ch4}
+\input{capitulos/chapter4.tex}
+
+\makechapter{Modelo de toma de decisiones en conducción autónoma}{Modelo de toma de decisiones en conducción autónoma}{Modelo de toma de decisiones en conducción autónoma\label{ch5}}
+\input{capitulos/chapter5.tex}
+
+\makechapter{Conclusiones y futuros desarrollos}{Conclusiones y futuros desarrollos}{Conclusiones y futuros desarrollos\label{ch6}}
+\input{capitulos/chapter6.tex}
+
+\startbib
+\printbibliography
+% \printbibliography[heading=bibintoc,title={{\hrule\medskip\hfill \sc Referencias \medskip\hrule}}]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Begin Part II - Collection of ANEXOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\startpapers
+
+%-------------------------------------------------------------------
+
+\makechapter{Encuesta sobre sensaciones y comportamientos en incorporaciones}{Encuesta sobre sensaciones y comportamientos en incorporaciones}{Encuesta sobre sensaciones y comportamientos en incorporaciones\label{AA}}
+\input{anexos/anexoa.tex}
+
+\makechapter{Encuesta sobre variables en la toma de decisiones en la conducción}{Encuesta sobre variables en la toma de decisiones en la conducción}{Encuesta sobre variables en la toma de decisiones en la conducción\label{AB}}
+\input{anexos/anexob.tex}
+
+\end{document}
+
+
+

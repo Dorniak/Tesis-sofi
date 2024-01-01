@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla TESIS
+% Escuela Técnica Superior de Ingenieros Industriales - Universidad Politécnica de Madrid
+% Adaptada por: SSM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+
+% Márgenes de esta página modificados
+%\newgeometry{ignoreall,top=2cm,bottom=2cm}
+
+% Offset horizontal para toda la portada
+% \setlength{\centeroffset}{-0.5\oddsidemargin}
+% \addtolength{\centeroffset}{0.5\evensidemargin}
+% \thispagestyle{empty}
+
+%Universidad y Escuela
+\noindent\begin{minipage}{\textwidth}
+\centering
+\LARGE\textbf{Universidad Politécnica de Madrid}\\
+\Large\textbf{Escuela Técnica Superior de Ingenieros Industriales}
+\end{minipage}
+
+\vspace{1cm}
+
+% Logos
+    \begin{minipage}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=3.5cm]{\logoEscuelaPortada}
+    \end{minipage}%
+    \begin{minipage}[t]{0.6\textwidth}
+        \centering
+        \includegraphics[width=7cm]{\logoUniversidadPortada}
+    \end{minipage}
+    
+\vspace{1cm}
+
+
+% Titulo y subtitulo
+\noindent\rule[-1ex]{\textwidth}{1pt}\\[3.5ex] % Linea
+\noindent\begin{minipage}{\textwidth}
+\centering
+\begin{spacing}{1.5}
+{\huge\bfseries \titulo}
+\end{spacing}
+\noindent\rule[-1ex]{\textwidth}{1pt}\\[3.5ex] % Linea
+
+
+% Relleno hasta la zona central
+\vspace{2cm}
+
+% Zona central. Autor y Tutores
+\noindent\begin{minipage}{\textwidth}
+    \centering 
+    \Large\textbf{\tipotrabajo}\\
+    \vspace*{8em}
+    \textbf{Autora}\\ {\miNombre}\\ {\miTitulacion}\\[2.5ex]
+\end{minipage}
+\\[2cm]
+
+% Relleno hasta la zona de abajo
+\vspace*{\fill}
+
+Noviembre 2023
+%\Hoy % Muestra la fecha actual en español
+\end{minipage}
+
+\end{titlepage}
+
+% A partir de aquí se aplican los márgenes establecidos en configuracioninicial.tex
+\restoregeometry
